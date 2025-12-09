@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo" onclick="goTo('index.html')">THE HUMBLE CO.</div>
+    <nav>
+        <a onclick="goTo('index.html')">Home</a>
+        <a onclick="goTo('shop.html')">Shop</a>
+        <a class="cart" onclick="goTo('cart.html')" id="cart-link">Cart</a>
+    </nav>
+</header>
+
+<section class="cart-section">
+    <h2>Your Cart Items</h2>
+
+    <table id="cart-table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h2 class="total-amount">Final Amount: ₹<span id="grand-total">0</span></h2>
+
+    <button class="buy-btn" onclick="checkout()">Proceed to Buy</button>
+
+</section>
+
+<script>
+function goTo(page) { window.location.href = page; }
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function loadCart() {
+    const tbody = document.querySelector("#cart-table tbody");
+    const totalEl = document.getElementById("grand-total");
+    
+    tbody.innerHTML = "";
+
+    if (cart.length === 0) {
+        tbody.innerHTML = "<tr><td colspan='5'>Your cart is empty</td></tr>";
+        totalEl.innerText = "0";
+        return;
+    }
+
+    let grandTotal = 0;
+
+    cart.forEach((item, index) => {
+        let total = item.qty * item.price;
+        grandTotal += total;
+
+        let row = `
+            <tr>
+                <td>${item.name}</td>
+                <td>${item.qty}</td>
+                <td>₹${item.price}</td>
+                <td>₹${total}</td>
+                <td><button onclick="removeItem(${index})" class="remove-btn">X</button></td>
+            </tr>
+        `;
+        tbody.innerHTML += row;
+    });
+
+    totalEl.innerText = grandTotal;
+}
+
+function removeItem(i) {
+    cart.splice(i, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    loadCart();
+}
+
+function checkout() {
+    alert("Thank you for shopping! Proceeding to payment.");
+    window.location.href = "checkout.html";
+}
+
+loadCart();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environment Friendly Goods</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo" onclick="goTo('index.html')">THE HUMBLE CO.</div>
+    <nav>
+        <a onclick="goTo('index.html')">Home</a>
+        <a onclick="goTo('shop.html')">Shop</a>
+        <a onclick="goTo('about.html')">About</a>
+        <a onclick="goTo('contact.html')">Contact</a>
+        <a class="cart" onclick="goTo('cart.html')" id="cart-link">Cart (0) - ₹0</a>
+    </nav>
+</header>
+
+<section class="banner">
+    <h2>Shop environment<br>friendly quality goods</h2>
+</section>
+
+<section class="products-grid">
+
+    <div class="product-card" data-id="1" data-name="Bamboo Toothbrush" data-price="199">
+        <img src="images/bamboobrush.jpeg" alt="">
+        <p class="name">Bamboo Toothbrush</p>
+        <p class="price">₹199</p>
+        <button class="add-cart">Add to Cart</button>
+        <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product-card" data-id="2" data-name="Natural Toothpaste" data-price="149">
+        <img src="images/natural-toothpaste.jpg" alt="">
+        <p class="name">Natural Toothpaste</p>
+        <p class="price">₹149</p>
+        <button class="add-cart">Add to Cart</button>
+        <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product-card" data-id="3" data-name="Chewing Gum" data-price="99">
+        <img src="images/chewing-gum.jpg" alt="">
+        <p class="name">Chewing Gum</p>
+        <p class="price">₹99</p>
+        <button class="add-cart">Add to Cart</button>
+        <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product-card" data-id="4" data-name="Mouthwash" data-price="249">
+        <img src="images/mouthwash.jpg" alt="">
+        <p class="name">Mouthwash</p>
+        <p class="price">₹249</p>
+        <button class="add-cart">Add to Cart</button>
+        <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product-card" data-id="5" data-name="Herbal Lip Balm" data-price="89">
+        <img src="images/lipbalm.jpg" alt="">
+        <p class="name">Herbal Lip Balm</p>
+        <p class="price">₹89</p>
+        <button class="add-cart">Add to Cart</button>
+        <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product-card" data-id="6" data-name="Organic Soap Bar" data-price="129">
+        <img src="images/organic-soap.jpg" alt="">
+        <p class="name">Organic Soap Bar</p>
+        <p class="price">₹129</p>
+        <button class="add-cart">Add to Cart</button>
+        <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product-card" data-id="7" data-name="Bamboo Comb" data-price="179">
+        <img src="images/comb.jpg" alt="">
+        <p class="name">Bamboo Comb</p>
+        <p class="price">₹179</p>
+        <button class="add-cart">Add to Cart</button>
+        <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product-card" data-id="8" data-name="Face Scrub" data-price="219">
+        <img src="images/facescrub.jpg" alt="">
+        <p class="name">Face Scrub</p>
+        <p class="price">₹219</p>
+        <button class="add-cart">Add to Cart</button>
+        <button class="buy-btn">Buy Now</button>
+    </div>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
