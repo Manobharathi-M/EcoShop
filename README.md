@@ -40,5 +40,6 @@ EcoShop/
 │   ├── organic-soap.jpg
 │   ├── comb.jpg
 │   └── facescrub.jpg
-└── README.md           # Project README
-version too?
+└── README.md           
+
+
